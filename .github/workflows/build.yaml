@@ -23,6 +23,7 @@ jobs:
           # hier ist Platz für maven package und docker build
           mvn package
           docker build -t ghcr.io/rolamb02/petclinic:latest .
-          docker login ghcr.io --username rolabmb02 --password $GITHUB_ACCESSTOKEN ghcr.io
+          docker login ghcr.io --username rolamb02 --password ${{ secrets.GITHUB_ACCESSTOKEN }}
+
           docker push ghcr.io/rolamb02/petclinic:latest
           
